@@ -1,3 +1,4 @@
+//Opening and Closing The Browser
 package selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,24 @@ public class OpenChrome {
     System.setProperty("webdriver.gecko.driver","C:\\selenium\\geckodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
 		driver.get("http://www.google.co.in");
+		driver.quit();
+	}
+}
+
+//Finding Web Elements
+package selenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class OpenGoogleWithFirefox
+{
+	public static void main(String[] args)
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\selenium\\geckodriver\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://www.google.co.in");
+		driver.findElement(By.name("q")).sendKeys("Agni"+Keys.ENTER);
 		driver.quit();
 	}
 }
